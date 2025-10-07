@@ -59,9 +59,15 @@ Xor8bit xor8bit(
 	.S(XorOut)
 );
 
+//NotA
+Not8bit not9bit(
+	.A(A),
+	.S(NotOut)
+);
+
 //Muxes 0 ao 7
 mux8to1 mux0(
-	.NotUse(8'b00000000),     //000	
+	.Not(NotOut[0]),     //000	
 	.Add(AdderOut[0]),        //001
 	.Sub(SubtractorOut[0]),   //010
 	.Mul(MultiplierOut[0]),   //011
@@ -74,7 +80,7 @@ mux8to1 mux0(
 );
 
 mux8to1 mux1(
-	.NotUse(8'b00000000),     //000	
+	.Not(NotOut[1]),     //000	
 	.Add(AdderOut[1]),        //001
 	.Sub(SubtractorOut[1]),   //010
 	.Mul(MultiplierOut[1]),   //011
@@ -87,7 +93,7 @@ mux8to1 mux1(
 );
 
 mux8to1 mux2(
-	.NotUse(8'b00000000),  //000	
+	.Not(NotOut[2]),  //000	
 	.Add(AdderOut[2]),        //001
 	.Sub(SubtractorOut[2]),   //010
 	.Mul(MultiplierOut[2]),   //011
@@ -100,7 +106,7 @@ mux8to1 mux2(
 );
 
 mux8to1 mux3(
-	.NotUse(8'b00000000),  //000	
+	.Not(NotOut[3]),  //000	
 	.Add(AdderOut[3]),        //001
 	.Sub(SubtractorOut[3]),   //010
 	.Mul(MultiplierOut[3]),   //011
@@ -113,7 +119,7 @@ mux8to1 mux3(
 );
 
 mux8to1 mux4(
-	.NotUse(8'b00000000),  //000	
+	.Not(NotOut[4]),  //000	
 	.Add(AdderOut[4]),        //001
 	.Sub(SubtractorOut[4]),   //010
 	.Mul(MultiplierOut[4]),   //011
@@ -126,7 +132,7 @@ mux8to1 mux4(
 );
 
 mux8to1 mux5(
-	.NotUse(8'b00000000),  //000	
+	.Not(NotOut[5]),  //000	
 	.Add(AdderOut[5]),        //001
 	.Sub(SubtractorOut[5]),   //010
 	.Mul(MultiplierOut[5]),   //011
@@ -139,7 +145,7 @@ mux8to1 mux5(
 );
 
 mux8to1 mux6(
-	.NotUse(8'b00000000),  //000	
+	.Not(NotOut[6]),  //000	
 	.Add(AdderOut[6]),        //001
 	.Sub(SubtractorOut[6]),   //010
 	.Mul(MultiplierOut[6]),   //011
@@ -152,7 +158,7 @@ mux8to1 mux6(
 );
 
 mux8to1 mux7(
-	.NotUse(8'b00000000),  //000	
+	.Not(NotOut[7]),  //000	
 	.Add(AdderOut[7]),        //001
 	.Sub(SubtractorOut[7]),   //010
 	.Mul(MultiplierOut[7]),   //011
@@ -166,7 +172,7 @@ mux8to1 mux7(
 
 //Mux para escolher o COut
 mux8to1 muxCout(
-   .NotUse(1'b0),
+    .Not(1'b0),
 	.Add(AdderCout), 
 	.Sub(SubtractorCout), 
 	.Mul(1'b0), 
