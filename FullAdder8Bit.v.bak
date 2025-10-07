@@ -4,7 +4,7 @@ input Cin;
 output [7:0] S;
 output Cout;
 
-wire c0, c1, c2, c3, c4, c6, c7;
+wire c0, c1, c2, c3, c4, c6, c6, c7;
 
 FullAdder1Bit a0 (
  .A(A[0]),
